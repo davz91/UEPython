@@ -67,7 +67,7 @@ def GetAssetClass(Asset):
             if 'ActorComponent' in LoadedBPClass.__name__:
                 AssetClass = 'ActorComponent'
         return AssetClass
-        
+
 # Feels like these two should be just one. Something under the lines of AssetNeedsModifications() returning an EnumType with which modification we need to do.
 def AssetNeedsPrefix(Asset, Prefix):
     try:
@@ -117,12 +117,12 @@ def ResolveDependencies(DepPkg, Dependencies):
                         ResolveDependencies(_DepPkg, Dependencies)
 
 # This function will fix ALL the redirectos within the project, so you'll likely see appear assets marked for deletion in your SourceControl if you don't normally fix them up manually
-def FixUpRedirectors(platform):
+def FixUpRedirectors(Platform):
     EngineDir = None
     ProjectDir = None
     ResavePackagesCmd = None
 
-    if platform == 'Windows':
+    if Platform == 'Windows':
         EngineDir = '"'+PathUtil.convert_relative_path_to_full(PathUtil.engine_dir()).replace("/","\\") + 'Binaries\\Win64\\UE4Editor.exe"'
         ProjectDir = '"'+ PathUtil.convert_relative_path_to_full(PathUtil.get_project_file_path()).replace("/","\\")+'"'
         ResavePackagesCmd = EngineDir + ' ' + ProjectDir + " -run=ResavePackages -fixupredirects -autocheckout -projectonly -unnatended"
@@ -130,7 +130,7 @@ def FixUpRedirectors(platform):
     else:
         #MacOS
         #Seems like subprocess is not working on Mac same way it does on Windows, so using os.system instead for Mac. Probably will be the same for Linux if added
-        if platform == "Darwin" :
+        if Platform == "Darwin" :
             EngineDir = PathUtil.convert_relative_path_to_full(PathUtil.engine_dir()).replace(" ","\ ") + 'Binaries/Mac/UE4Editor.app/Contents/MacOS/UE4Editor'.replace(" ", "\ ")
             ProjectDir = PathUtil.convert_relative_path_to_full(PathUtil.get_project_file_path()).replace(" ","\ " )
             ResavePackagesCmd = EngineDir + ' ' + ProjectDir + " -run=ResavePackages -fixupredirects -autocheckout -projectonly -unnatended"
