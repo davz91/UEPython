@@ -136,7 +136,7 @@ def WriteCSV(Data):
     CurrentDateTime = datetime.now()
     StringDateTime = CurrentDateTime.strftime("%m_%d_%Y_%H_%M_%S")
     global CSV_NAME 
-    CSV_NAME = "AssetReferencesInLevel_"+str(PACKAGE_NAME)+"_"+StringDateTime+".csv"
+    CSV_NAME = "AIPR_"+str(PACKAGE_NAME)+"_"+StringDateTime+".csv"
     SaveDestination = str(PROJECT_FOLDER)+str(CSV_NAME)
     print(str(SaveDestination))
     Header = []
