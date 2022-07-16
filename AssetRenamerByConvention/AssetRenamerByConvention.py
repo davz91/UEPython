@@ -102,7 +102,8 @@ def Rename(Asset, FinalName):
 
     # This will also attempt to check out the assets once saved if Source Control is available
     EditorUtil.rename_loaded_asset(Asset, NewPath)
-    ResolveDependencies(Asset.get_path_name(), Dependencies)
+    print ("PAQUETEEEEE: "+str(Asset.get_path_name()))
+    #ResolveDependencies(Asset.get_path_name(), Dependencies)
 
 
 #Get all dependencies per asset (and dependency) and add them to be saved later on.
