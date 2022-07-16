@@ -15,3 +15,17 @@ Once the user has selected an actor in the widget and an optional property to qu
 5. Press Run Utility
 
 If everything went as expected, a prompt will show the name of the save file and will ask you if you want to open the resulting file path.
+
+## Images
+
+### Widget 
+
+![Widget](https://github.com/davz91/UEPython/blob/main/ActorInstancePropertyRetriever/Images/AIPR_Widget.png)
+
+### Success Window
+
+![Success](https://github.com/davz91/UEPython/blob/main/ActorInstancePropertyRetriever/Images/AIPR_Success.png)
+
+### Demo results
+
+![DemoResults](https://github.com/davz91/UEPython/blob/main/ActorInstancePropertyRetriever/Images/AIPR_DemoResults.png)
